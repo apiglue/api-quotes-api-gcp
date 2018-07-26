@@ -13,10 +13,10 @@ admin.initializeApp(functions.config().firebase);
 var db = admin.firestore();
 
 exports.helloHttp = (req, res) => {
-db.collection('users').get()
+db.collection('quote').get()
     .then((snapshot) => {
       snapshot.forEach((doc) => {
-        console.log(doc.id, '=>', doc.data());
+        console.log(doc.id, '=>', doc.quote());
       });
     })
     .catch((err) => {
